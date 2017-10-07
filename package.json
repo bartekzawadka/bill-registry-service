@@ -1,0 +1,21 @@
+{
+  "name": "bill-registry-service",
+  "version": "1.0.0",
+  "description": "Bill Registry API",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bartekzawadka/bill-registry-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bartekzawadka/bill-registry-service/issues"
+  },
+  "homepage": "https://github.com/bartekzawadka/bill-registry-service#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.0.0",
+    "mongoose": "~4.10.2"
+  }
+}
