@@ -16,6 +16,11 @@ var app = express();
 
 var server = http.createServer(app);
 
+app.use(function crossOrigin(req, res, next){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", 'X-Requested-With');
+    return next();
+});
 
 app.use(bodyParser.json());
 app.use('/api', expenses);
