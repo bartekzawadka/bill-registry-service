@@ -11,6 +11,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var expenses = require('./lib/expenses');
+var bills = require('./lib/bills');
 
 var app = express();
 
@@ -18,12 +19,14 @@ var server = http.createServer(app);
 
 app.use(function crossOrigin(req, res, next){
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", 'X-Requested-With');
+    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+    res.header("Access-Control-Allow-Headers", 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
     return next();
 });
 
 app.use(bodyParser.json());
 app.use('/api', expenses);
+app.use('/api', bills);
 
 mongoose.Promise = global.Promise;
 
