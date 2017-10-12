@@ -27,12 +27,15 @@ expenseSchema.pre('save', function(next){
    next();
 });
 
+expenseSchema.set('toObject', { getters: true, setters: true });
+expenseSchema.set('toJSON', { getters: true, setters: true });
+
 expenseSchema.path('amount').get(function(num){
    return (num/100).toFixed(2);
 });
 
 expenseSchema.path('amount').set(function(num){
-   return num * 100;
+    return num * 100;
 });
 
 var User = mongoose.model('Expense', expenseSchema);
