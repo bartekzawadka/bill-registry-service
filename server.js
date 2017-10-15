@@ -24,7 +24,7 @@ app.use(function crossOrigin(req, res, next){
     return next();
 });
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
 app.use('/api', expenses);
 app.use('/api', bills);
 

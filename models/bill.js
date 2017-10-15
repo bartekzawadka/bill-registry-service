@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 
 var billSchema = mongoose.Schema({
     thumbnail: {type: String, required: false},
-    billData: {type: String, required: true}
+    billData: {type: String, required: true},
+    mimeType: {type: String, required: false}
 }, {
     collection: "bills"
 });
