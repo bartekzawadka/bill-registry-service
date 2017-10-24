@@ -1,14 +1,17 @@
 'use strict';
 
-var mongoose = require('mongoose');
-
-var billSchema = mongoose.Schema({
-    thumbnail: {type: String, required: false},
-    billData: {type: String, required: true},
-    mimeType: {type: String, required: false}
-}, {
-    collection: "bills"
+//var mongoose = require('mongoose');
+var gridfs = require('mongoose-gridfs')({
+   collection: 'bills',
+   model: 'Bill'
 });
 
-var Bill = mongoose.model('Bill', billSchema);
+var Bill = gridfs.model;
+var BillSchema = gridfs.schema;
+
+BillSchema.add({
+    originalname: String,
+    mimeType: String
+});
+
 module.exports = Bill;
