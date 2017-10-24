@@ -8,7 +8,13 @@ var expenseSchema = mongoose.Schema({
     created: {type: Date, required: true},
     amount: {type: Number, required: true},
     amountText: {type: String},
-    bill: {type: mongoose.Schema.Types.ObjectId, ref: 'Bill', required: true}
+    thumbnail: {type: String},
+    mimeType: {type: String},
+    bill: {type: mongoose.Schema.Types.ObjectId, ref: 'Bill', required: true},
+    billFile: {
+        name: {type: String},
+        size: {type: Number}
+    }
 }, {
     collection: "expenses"
 });
