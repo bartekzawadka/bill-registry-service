@@ -6,6 +6,7 @@ var expenseSchema = mongoose.Schema({
     name: {type: String, required: true},
     description: {type: String, required: false},
     created: {type: Date, required: true},
+    expenseDate: {type: Date, required: true},
     amount: {type: Number, required: true},
     amountText: {type: String},
     thumbnail: {type: String},
